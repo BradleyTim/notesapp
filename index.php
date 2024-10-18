@@ -8,5 +8,5 @@ $notes = [
     'Buy a phone'
 ];
 
-require "./index.view.php";
+require "./views/index.view.php";
 
