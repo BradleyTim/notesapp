@@ -2,13 +2,22 @@
 
 require "functions.php";
 
-$greeting = 'Hello World!';
-
-$notes = [
-    'Learn PHP',
-    'Code a notes app', 
-    'Buy a phone'
+$routes = [
+    '/' => './controllers/index.php',
+    '/about' => './controllers/about.php',
+    '/contact' => './controllers/contact.php',
 ];
 
-require "./views/index.view.php";
+$route = strval(url_is());
 
+function route_to_key($route, $routes) {
+    if ($route === '/') {
+        require $routes['/'];
+    } elseif ($route === '/about') {
+        require $routes['/about'];
+    } else {
+        require $routes['/contact'];
+    }
+}
+
+route_to_key($route, $routes);
