@@ -1,10 +1,6 @@
 <?php 
 
-$routes = [
-    '/' => './controllers/index.php',
-    '/about' => './controllers/about.php',
-    '/contact' => './controllers/contact.php',
-];
+$routes = require "./routes.php";
 
 $route = strval(url());
 
