@@ -1,5 +1,5 @@
 <?php 
-
+require "./Response.php";
 $routes = require "./routes.php";
 
 $route = strval(url());
@@ -16,7 +16,7 @@ function route_to_controller($route, $routes) {
     if (array_key_exists($route, $routes)) {
         require $routes[$route];
     } else {
-        abort(404);
+        abort(Response::FORBIDDEN);
     }
 }
 
