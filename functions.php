@@ -14,3 +14,11 @@ function dd($value) {
     echo '</prev>';
     die();
 }
+
+function base_dir($value) {
+    return __DIR__ . $value;
+}
+
+function view($value) {
+    require base_dir("/views/{$value}");
+}
