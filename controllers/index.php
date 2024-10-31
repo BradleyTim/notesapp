@@ -2,7 +2,9 @@
 
 require base_dir("/DB.php");
 
-$db = new DB();
+$config = require base_dir("/config.php");
+
+$db = new DB($config['database']['dsn']);
 
 $posts = $db->fetchall();
 

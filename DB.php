@@ -2,8 +2,8 @@
 
 class DB {
     public $pdo;
-    public function __construct() {
-        $this->pdo = new PDO('sqlite:/Users/macbook/Code/notesapp/database/database.sqlite');
+    public function __construct($dsn) {
+        $this->pdo = new PDO($dsn);
     }
     public function query() {
         
