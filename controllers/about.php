@@ -1,3 +1,3 @@
 <?php 
 
-require "./views/about.view.php";
+require base_dir("/views/about.view.php");

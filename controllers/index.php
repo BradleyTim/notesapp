@@ -1,12 +1,10 @@
 <?php 
 
-$greeting = 'Hello World!';
+require base_dir("/DB.php");
 
-$notes = [
-    'Learn PHP',
-    'Code a notes app', 
-    'Buy a phone'
-];
+$db = new DB();
 
-require "./views/index.view.php";
+$posts = $db->fetchall();
+
+require base_dir("/views/index.view.php");
 
