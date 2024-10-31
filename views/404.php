@@ -1,6 +1,6 @@
-<?php require "partials/header.view.php"; ?>
+<?php require base_dir("/views/partials/header.view.php"); ?>
 <header>
-    <?php require "partials/nav.view.php"; ?>
+    <?php require base_dir("/views/partials/nav.view.php"); ?>
 </header>
 <main>
     <section>
@@ -10,4 +10,4 @@
         </div>
     </section>
 </main>
-<?php require "partials/footer.view.php"; ?>
+<?php require base_dir("/views/partials/footer.view.php"); ?>

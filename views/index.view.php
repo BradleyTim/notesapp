@@ -4,11 +4,18 @@
 </header>
 <main>
 <section>
-    <h1><?= $greeting; ?></h1>
+    <h1>Your Notes</h1>
 
     <ul>
-        <?php foreach($notes as $note): ?>
-            <li><?= $note; ?></li>
+        <?php foreach($posts as $post): ?>
+            <details>
+                <summary>
+                    <?= $post['title']; ?>
+                </summary>
+                <p>
+                    <?= $post['body']; ?>
+                </p>
+            </details>
         <?php endforeach; ?>
     </ul>
 </section>
