@@ -5,18 +5,18 @@ class DB {
     public function __construct($dsn) {
         $this->pdo = new PDO($dsn);
     }
-    public function query() {
+    public function query($query, $params=[]) {
         
-        $statement = $this->pdo->prepare('select * from posts');
+        $statement = $this->pdo->prepare($query, $params);
         $statement->execute();
         return $statement;
     }
 
-    public function fetchall() {
-        return $this->query()->fetchAll(PDO::FETCH_ASSOC);
+    public function fetchall($query, $params=[]) {
+        return $this->query($query)->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function fetch() {
-        return $this->query()->fetch(PDO::FETCH_ASSOC);
+    public function fetch($query, $params=[]) {
+        return $this->query($query)->fetch(PDO::FETCH_ASSOC);
     }
 }
