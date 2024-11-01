@@ -6,9 +6,13 @@ class DB {
         $this->pdo = new PDO($dsn);
     }
     public function query($query, $params=[]) {
-        
         $statement = $this->pdo->prepare($query, $params);
         $statement->execute();
+        return $statement;
+    }
+    public function insert($query, $params=[]) {
+        $statement = $this->pdo->prepare($query);
+        $statement->execute($params);
         return $statement;
     }
 
