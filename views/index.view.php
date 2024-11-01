@@ -6,18 +6,21 @@
 <section>
     <h1>Your Notes</h1>
 
-    <ul>
+    <div>
         <?php foreach($posts as $post): ?>
             <details>
                 <summary>
-                    <?= $post['title']; ?>
+                    <?= htmlspecialchars($post['title']); ?>
                 </summary>
                 <p>
-                    <?= $post['body']; ?>
+                    <?= htmlspecialchars($post['body']); ?>
                 </p>
             </details>
         <?php endforeach; ?>
-    </ul>
+    </div>
+    <div>
+        <a href="/notes/create">Create Note</a>
+    </div>
 </section>
 </main>
 <?php require "partials/footer.view.php"; ?>
