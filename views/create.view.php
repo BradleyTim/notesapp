@@ -7,10 +7,10 @@
         <h1>Create Note</h1>
         <form action="" method="POST">
             <div>
-                <input type="text" name="title" id="title" placeholder="Title...">
+                <input type="text" name="title" id="title" placeholder="Title..." required>
             </div>
             <div>
-                <input type="text" name="body" id="body" placeholder="what's on your mind? ">
+                <input type="text" name="body" id="body" placeholder="what's on your mind? " required>
             </div>
             <div>
                 <button type="submit">Create Note</button>
