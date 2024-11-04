@@ -12,8 +12,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $body = $_POST['body'];
         $query = "insert into posts (title, body) values (:title, :body)";
         $db->insert($query, [':title' => $title, ':body' => $body]);
-        header('/');
-        die();
+        header('location:/');
+        exit();
     }
 }
 
