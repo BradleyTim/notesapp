@@ -4,7 +4,7 @@
 </header>
 <main>
 <section>
-    <h1>Your Notes</h1>
+    <h1>Random Thoughts</h1>
 
     <div>
         <?php foreach($posts as $post): ?>
