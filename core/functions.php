@@ -16,9 +16,10 @@ function dd($value) {
 }
 
 function base_dir($value) {
-    return __DIR__ . $value;
+    return __DIR__ . '/../' . $value;
 }
 
-function view($value) {
-    require base_dir("/views/{$value}");
+function view($value, $attributes=[]) {
+    extract($attributes);
+    require base_dir("views/{$value}");
 }

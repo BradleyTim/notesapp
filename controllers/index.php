@@ -1,6 +1,6 @@
 <?php 
 
-require base_dir("/DB.php");
+require base_dir("/core/DB.php");
 
 $config = require base_dir("/config.php");
 

@@ -1,5 +1,5 @@
 <?php 
-require base_dir('/Response.php');
+require base_dir('/core/Response.php');
 $routes = require base_dir('/routes.php'); 
 
 $route = strval(url());

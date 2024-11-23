@@ -1,6 +1,10 @@
 <?php 
 
-require __DIR__ . "/../functions.php"; 
+require __DIR__ . "/../core/functions.php"; 
 
-require base_dir('/router.php');
-// require './../router.php';
+spl_autoload_register(function ($class) {
+    require base_dir("{$class}.php");
+});
+
+require base_dir('/core/router.php');
+
