@@ -19,6 +19,12 @@ class DB {
         return $statement;
     }
 
+    public function delete( $query, $params=[]) {
+        $statement = $this->pdo->prepare($query);
+        $statement->execute($params);
+        return $statement;
+    }
+
     public function fetchall($query, $params=[]) {
         return $this->query($query)->fetchAll(PDO::FETCH_ASSOC);
     }
