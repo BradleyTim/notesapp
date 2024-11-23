@@ -15,6 +15,10 @@
                 <p>
                     <?= htmlspecialchars($post['body']); ?>
                 </p>
+                <form action="#" method="POST">
+                    <input type="hidden" name="id" value="<?= $post['id']; ?>">
+                    <button type="submit">Delete</button>
+                </form>
             </details>
         <?php endforeach; ?>
     </div>
