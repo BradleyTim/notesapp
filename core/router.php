@@ -1,4 +1,7 @@
 <?php 
+
+use Core\Response;
+
 require base_dir('/core/Response.php');
 $routes = require base_dir('/routes.php'); 
 

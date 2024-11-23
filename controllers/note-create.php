@@ -1,4 +1,8 @@
 <?php 
+
+use Core\DB;
+use Core\Validator;
+
 require base_dir("/core/Validator.php");
 require base_dir("/core/DB.php");
 

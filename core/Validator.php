@@ -1,5 +1,7 @@
 <?php 
 
+namespace Core;
+
 class Validator {
     public static function string($str, $min, $max) {
         return strlen(trim($str)) > $min && strlen(trim($str)) < $max;

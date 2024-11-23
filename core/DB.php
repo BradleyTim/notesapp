@@ -1,5 +1,8 @@
 <?php 
 
+namespace Core;
+
+use PDO;
 class DB {
     public $pdo;
     public function __construct($dsn) {
