@@ -4,7 +4,7 @@
 </header>
 <main>
 <section>
-    <h1>Random Thoughts</h1>
+    <h1>My Notes</h1>
 
     <div>
         <?php foreach($posts as $post): ?>
@@ -15,7 +15,8 @@
                 <p>
                     <?= htmlspecialchars($post['body']); ?>
                 </p>
-                <form action="#" method="POST">
+                <form method="POST">
+                    <input type="hidden" name="_method" value="DELETE">
                     <input type="hidden" name="id" value="<?= $post['id']; ?>">
                     <button type="submit">Delete</button>
                 </form>

@@ -23,3 +23,11 @@ function view($value, $attributes=[]) {
     extract($attributes);
     require base_dir("views/{$value}");
 }
+
+function abort($code=404) {
+    http_response_code($code);
+
+    require base_dir("views/{$code}.php");
+
+    die();
+}

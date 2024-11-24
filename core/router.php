@@ -1,26 +1,51 @@
 <?php 
-
+namespace Core;
 use Core\Response;
 
-require base_dir('/core/Response.php');
-$routes = require base_dir('/routes.php'); 
+class Router {
+    protected $routes = [];
 
-$route = strval(url());
+    public function add($uri, $controller, $method) {
+        $this->routes[] = [
+            'uri' => $uri,
+            'controller' => $controller,
+            'method'=> $method
+        ];
+        // $this->routes[] = compact('uri', 'controller', 'method'); 
+    }
 
-function abort($code=404) {
-    http_response_code($code);
+    public function get($uri, $controller) {
+        $this->add($uri, $controller, 'GET');
+    }
 
-    require base_dir("/views/{$code}.php");
+    public function post($uri, $controller) {
+        $this->add($uri, $controller, 'POST');
+    }
 
-    die();
-}
+    public function patch($uri, $controller) {
+        $this->add($uri, $controller, 'PATCH');
+    }
 
-function route_to_controller($route, $routes) {
-    if (array_key_exists($route, $routes)) {
-        require base_dir('/' . $routes[$route]);
-    } else {
-        abort(Response::NOT_FOUND);
+    public function delete($uri, $controller) {
+        $this->add($uri, $controller, 'DELETE');
+    }
+
+    public function route($uri, $method) {
+        foreach($this->routes as $route) {
+            if ($route['uri'] == $uri && $route['method'] == strtoupper($method)) {
+                return require base_dir($route['controller']);
+            } 
+        }
+        
+        $this->abort(Response::NOT_FOUND);
+    }
+
+    protected function abort($code=404) {
+        http_response_code($code);
+    
+        require base_dir("/views/{$code}.php");
+    
+        die();
     }
 }
 
-route_to_controller($route, $routes);

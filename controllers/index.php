@@ -21,5 +21,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // $posts = $db->fetchall($query, [':id' => $_GET['id']]);
 }
 
-require base_dir("/views/index.view.php");
+require base_dir("views/index.view.php");
 

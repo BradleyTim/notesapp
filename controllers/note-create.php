@@ -3,9 +3,6 @@
 use Core\DB;
 use Core\Validator;
 
-require base_dir("/core/Validator.php");
-require base_dir("/core/DB.php");
-
 $config = require base_dir("/config.php");
 $db = new DB($config['database']['dsn']); 
 
@@ -31,4 +28,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 }
 
-require base_dir("/views/create.view.php");
+require base_dir("views/create.view.php");
