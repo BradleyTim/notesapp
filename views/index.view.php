@@ -15,7 +15,7 @@
                 <p>
                     <?= htmlspecialchars($post['body']); ?>
                 </p>
-                <form method="POST">
+                <form action="/note" method="POST">
                     <input type="hidden" name="_method" value="DELETE">
                     <input type="hidden" name="id" value="<?= $post['id']; ?>">
                     <button type="submit">Delete</button>

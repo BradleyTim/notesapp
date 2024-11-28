@@ -5,7 +5,7 @@
 <main>
     <section>
         <h1>Create Note</h1>
-        <form action="" method="POST">
+        <form action="/notes" method="POST">
             <div>
                 <input type="text" name="title" id="title" placeholder="Title..." required>
                 <p><?= $errors['title'] ?? '' ?></p>

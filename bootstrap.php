@@ -5,7 +5,7 @@ use Core\Container;
 use Core\DB;
 
 $container = new Container();
-$container->bind('Core/DB', function() {
+$container->bind('Core\DB', function() {
     $config = require base_dir("/config.php");
     $db = new DB($config['database']['dsn']); 
     return $db;
