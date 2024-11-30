@@ -15,6 +15,9 @@
                 <p>
                     <?= htmlspecialchars($post['body']); ?>
                 </p>
+                <div>
+                    <a href="/note/edit?id=<?= $post['id']; ?>">Edit</a>
+                </div>
                 <form action="/note" method="POST">
                     <input type="hidden" name="_method" value="DELETE">
                     <input type="hidden" name="id" value="<?= $post['id']; ?>">
