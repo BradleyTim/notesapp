@@ -26,10 +26,12 @@ class DB {
     }
 
     public function fetchall($query, $params=[]) {
-        return $this->query($query)->fetchAll(PDO::FETCH_ASSOC);
+        return $this->query($query, $params)->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function fetch($query, $params=[]) {
-        return $this->query($query)->fetch(PDO::FETCH_ASSOC);
+        $statement = $this->pdo->prepare($query);
+        $statement->execute($params);
+        return $statement->fetch(PDO::FETCH_OBJ);
     }
 }
